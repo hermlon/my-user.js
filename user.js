@@ -1357,3 +1357,176 @@ user_pref("app.update.background.scheduling.enabled", false);
 
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
+
+// My overrides
+
+user_pref("_user.js.parrot", "OVERRIDE syntax error: the parrot's dead!");
+
+/* resume previous session */
+user_pref("browser.startup.page", 3);
+
+/* normal homepage */
+user_pref("browser.startup.homepage", "about:home");
+
+/* newtab page */
+user_pref("browser.newtabpage.enabled", true);
+user_pref("browser.newtab.preload", true);
+
+/* allow ipv6 */
+user_pref("network.dns.disableIPv6", false);
+
+/* normal search */
+user_pref("keyword.enabled", true);
+
+/* search suggestions */
+user_pref("browser.search.suggest.enabled", true);
+user_pref("browser.urlbar.suggest.searches", true);
+
+/* disable search engine suggestion */
+user_pref("browser.urlbar.suggest.engines", false);
+
+/* enable search and form history */
+user_pref("browser.formfill.enable", true);
+
+/* cache primary password */
+user_pref("security.ask_for_password", 0);
+
+/* enable autofill */
+user_pref("signon.autofillForms", true);
+user_pref("signon.formlessCapture.enabled", true);
+
+/* enable disk cache */
+user_pref("browser.cache.disk.enable", true);
+
+/* enable extra session data */
+user_pref("browser.sessionstore.privacy_level", 0);
+
+/* default session store intervall */
+user_pref("browser.sessionstore.interval", 15000);
+
+/* reenable font stuff */
+user_pref("gfx.font_rendering.opentype_svg.enabled", true);
+user_pref("gfx.font_rendering.graphite.enabled", true);
+
+/* enable DRM */
+user_pref("media.eme.enabled", true);
+
+/* enable WebRTC */
+user_pref("media.peerconnection.enabled", true);
+
+/* enable WebGL */
+user_pref("webgl.disabled", false);
+user_pref("webgl.enable-webgl2", true);
+
+/* enable screensharing */
+user_pref("media.getusermedia.screensharing.enabled", true);
+user_pref("media.getusermedia.browser.enabled", true);
+user_pref("media.getusermedia.audiocapture.enabled", true);
+
+/* default auto play */
+user_pref("media.autoplay.blocking_policy", 0);
+
+/* enable service workers */
+//user_pref("dom.serviceWorkers.enabled", true);
+
+/* enable push notifications */
+//user_pref("dom.push.enabled", true);
+
+/* enable audio stuff */
+user_pref("media.navigator.enabled", true);
+user_pref("dom.webaudio.enabled", true);
+
+/* enable devtools */
+user_pref("devtools.chrome.enabled", true);
+
+/* downloads */
+user_pref("browser.download.dir", "/home/hermlon/tmp/downloads");
+user_pref("browser.download.folderList", 2);
+user_pref("browser.download.useDownloadDir", true);
+user_pref("browser.download.manager.addToRecentDocs", true); //.local/share/recently-used.xbel
+// mime type specific in handlers.json
+
+/* safebrowsing */
+/* enable phishing/malware check for websites (this is set by default)*/
+//user_pref("browser.safebrowsing.malware.enabled", true);
+//user_pref("browser.safebrowsing.phishing.enabled", true);
+/* disable checking downloaded files */
+user_pref("browser.safebrowsing.downloads.enabled", false);
+user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
+user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
+
+/* disable clear on shutdown */
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+
+/* default clear recent history */
+user_pref("privacy.sanitize.timeSpan", 1);
+
+/* disable letterbox margins */
+user_pref("privacy.resistFingerprinting.letterboxing", false);
+
+/* enable animations */
+user_pref("ui.prefersReducedMotion", 0);
+
+/* disable fullscreen warning */
+user_pref("full-screen-api.warning.delay", 0);
+user_pref("full-screen-api.warning.timeout", 0);
+
+// user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
+
+/* don't close with last tab */
+user_pref("browser.tabs.closeWindowWithLastTab", false);
+
+/* open bookmarks in a new tab */
+user_pref("browser.tabs.loadBookmarksInTabs", true);
+
+/* disable alt key toggling the menu bar */
+user_pref("ui.key.menuAccessKey", 0);
+
+/* disable pocket */
+user_pref("extensions.pocket.enabled", false);
+
+/* disable http warning text */
+user_pref("security.insecure_connection_text.enabled", false);
+
+/* classic slower scroll speed */
+user_pref("general.smoothScroll.mouseWheel.durationMaxMS", 400);
+user_pref("general.smoothScroll.mouseWheel.durationMinMS", 200);
+
+/* engagement defaults */
+user_pref("browser.engagement.downloads-button.has-used", true);
+user_pref("browser.engagement.fxa-toolbar-menu-button.has-used", true);
+user_pref("identity.fxaccounts.toolbar.accessed", true);
+
+/* don't draw tabs in titlebar */
+user_pref("browser.tabs.drawInTitlebar", false);
+
+/* never show bookmarks toolbar */
+user_pref("browser.toolbars.bookmarks.visibility", "never");
+
+/* toolbar customization */
+user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"customizableui-special-spring13\",\"urlbar-container\",\"personal-bookmarks\",\"customizableui-special-spring2\",\"downloads-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[]},\"seen\":[\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\"],\"currentVersion\":16,\"newElementCount\":15}");
+
+/* urlbar */
+user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
+user_pref("browser.urlbar.placeholderName.private", "DuckDuckGo");
+user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
+// search results just in case this has to be tweaked later on
+//user_pref("browser.urlbar.resultBuckets", "{\"children\":[{\"maxResultCount\":1,\"children\":[{\"group\":\"heuristicTest\"},{\"group\":\"heuristicExtension\"},{\"group\":\"heuristicSearchTip\"},{\"group\":\"heuristicOmnibox\"},{\"group\":\"heuristicUnifiedComplete\"},{\"group\":\"heuristicAutofill\"},{\"group\":\"heuristicTokenAliasEngine\"},{\"group\":\"heuristicFallback\"}]},{\"group\":\"extension\",\"maxResultCount\":5},{\"flexChildren\":true,\"children\":[{\"group\":\"general\",\"flex\":2},{\"flexChildren\":true,\"children\":[{\"flex\":2,\"group\":\"formHistory\"},{\"flex\":4,\"group\":\"remoteSuggestion\"},{\"flex\":0,\"group\":\"tailSuggestion\"}],\"flex\":1}]}]}");
+
+/* disable whatever this does */
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+
+/* newtabbpage activitystream */
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
+user_pref("browser.newtabpage.activity-stream.topSitesRows", 4);
+user_pref("browser.newtabpage.pinned", "[]");
+user_pref("browser.newtabpage.blocked", "{\"26UbzFJ7qT9/4DhodHKA1Q==\":1,\"4gPpjkxgZzXPVtuEoAL9Ig==\":1,\"eV8/WsSLxHadrTL1gAxhug==\":1,\"gLv0ja2RYVgxKdp0I5qwvA==\":1,\"K00ILysCaEq8+bEqV/3nuw==\":1,\"T9nJot5PurhJSy8n038xGA==\":1}");
+
+
+user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
