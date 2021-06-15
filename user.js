@@ -1413,10 +1413,14 @@ user_pref("media.eme.enabled", true);
 
 /* enable WebRTC */
 user_pref("media.peerconnection.enabled", true);
+user_pref("media.peerconnection.ice.no_host", false);
 
 /* enable WebGL */
 user_pref("webgl.disabled", false);
 user_pref("webgl.enable-webgl2", true);
+
+/* enable WebAssembly */
+user_pref("javascript.options.wasm", true);
 
 /* enable screensharing */
 user_pref("media.getusermedia.screensharing.enabled", true);
@@ -1463,6 +1467,9 @@ user_pref("privacy.sanitize.timeSpan", 1);
 
 /* disable letterbox margins */
 user_pref("privacy.resistFingerprinting.letterboxing", false);
+
+/* tmp: disable resistFingerprinting for BBB recording playback to load */
+user_pref("privacy.resistFingerprinting", false);
 
 /* enable animations */
 user_pref("ui.prefersReducedMotion", 0);
