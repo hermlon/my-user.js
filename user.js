@@ -1459,6 +1459,9 @@ user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 
+/* allow clipboard api */
+user_pref("dom.allow_cut_copy", true);
+
 /* disable clear on shutdown */
 user_pref("privacy.sanitize.sanitizeOnShutdown", false);
 
