@@ -1385,9 +1385,6 @@ user_pref("browser.urlbar.suggest.searches", true);
 /* disable search engine suggestion */
 user_pref("browser.urlbar.suggest.engines", false);
 
-/* enable search and form history */
-user_pref("browser.formfill.enable", true);
-
 /* cache primary password */
 user_pref("security.ask_for_password", 0);
 
@@ -1463,10 +1460,20 @@ user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 user_pref("dom.allow_cut_copy", true);
 
 /* disable clear on shutdown */
-user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 
 /* default clear recent history */
-user_pref("privacy.sanitize.timeSpan", 1);
+user_pref("privacy.sanitize.timeSpan", 4); // today
+user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown.downloads", true); // see note above
+user_pref("privacy.clearOnShutdown.formdata", false); // Form & Search History
+user_pref("privacy.clearOnShutdown.history", false); // Browsing & Download History
+user_pref("privacy.clearOnShutdown.offlineApps", false); // Offline Website Data
+user_pref("privacy.clearOnShutdown.sessions", false); // Active Logins
+
+/* enable search and form history */
+user_pref("browser.formfill.enable", true);
 
 /* disable letterbox margins */
 user_pref("privacy.resistFingerprinting.letterboxing", false);
@@ -1534,7 +1541,7 @@ user_pref("browser.newtabpage.activity-stream.section.highlights.includeVisited"
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts", false);
-user_pref("browser.newtabpage.activity-stream.topSitesRows", 4);
+user_pref("browser.newtabpage.activity-stream.topSitesRows", 0);
 user_pref("browser.newtabpage.pinned", "[]");
 user_pref("browser.newtabpage.blocked", "{\"26UbzFJ7qT9/4DhodHKA1Q==\":1,\"4gPpjkxgZzXPVtuEoAL9Ig==\":1,\"eV8/WsSLxHadrTL1gAxhug==\":1,\"gLv0ja2RYVgxKdp0I5qwvA==\":1,\"K00ILysCaEq8+bEqV/3nuw==\":1,\"T9nJot5PurhJSy8n038xGA==\":1}");
 
