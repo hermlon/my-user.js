@@ -1360,8 +1360,6 @@ user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!"
 
 // My overrides
 
-user_pref("_user.js.parrot", "OVERRIDE syntax error: the parrot's dead!");
-
 /* resume previous session */
 user_pref("browser.startup.page", 3);
 
@@ -1371,6 +1369,9 @@ user_pref("browser.startup.homepage", "about:home");
 /* newtab page */
 user_pref("browser.newtabpage.enabled", true);
 user_pref("browser.newtab.preload", true);
+
+/* allow ipv6 */
+user_pref("network.dns.disableIPv6", false);
 
 /* allow ipv6 */
 user_pref("network.dns.disableIPv6", false);
@@ -1385,8 +1386,8 @@ user_pref("browser.urlbar.suggest.searches", true);
 /* disable search engine suggestion */
 user_pref("browser.urlbar.suggest.engines", false);
 
-/* cache primary password */
-user_pref("security.ask_for_password", 0);
+/* enable search and form history */
+user_pref("browser.formfill.enable", true);
 
 /* enable autofill */
 user_pref("signon.autofillForms", true);
@@ -1403,92 +1404,63 @@ user_pref("browser.sessionstore.interval", 15000);
 
 /* reenable font stuff */
 user_pref("gfx.font_rendering.opentype_svg.enabled", true);
-user_pref("gfx.font_rendering.graphite.enabled", true);
 
 /* enable DRM */
 user_pref("media.eme.enabled", true);
 
-/* enable WebRTC */
-user_pref("media.peerconnection.enabled", true);
-user_pref("media.peerconnection.ice.no_host", false);
+/* enable page close warning */
+user_pref("dom.disable_beforeunload", false);
+
+/* enable devtools */
+user_pref("devtools.chrome.enabled", true);
+
+/* keep cookies */
+user_pref("network.cookie.lifetimePolicy", 0);
 
 /* enable WebGL */
 user_pref("webgl.disabled", false);
-user_pref("webgl.enable-webgl2", true);
-
-/* enable WebAssembly */
-user_pref("javascript.options.wasm", true);
-
-/* enable screensharing */
-user_pref("media.getusermedia.screensharing.enabled", true);
-user_pref("media.getusermedia.browser.enabled", true);
-user_pref("media.getusermedia.audiocapture.enabled", true);
 
 /* default auto play */
 user_pref("media.autoplay.blocking_policy", 0);
 
-/* enable service workers */
-//user_pref("dom.serviceWorkers.enabled", true);
+// Custom
+//
+/* disable clear on shutdown */
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 
-/* enable push notifications */
-//user_pref("dom.push.enabled", true);
-
-/* enable audio stuff */
-user_pref("media.navigator.enabled", true);
-user_pref("dom.webaudio.enabled", true);
-
-/* enable devtools */
-user_pref("devtools.chrome.enabled", true);
+/* default clear recent history */
+user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown.downloads", true); // see note above
+user_pref("privacy.clearOnShutdown.formdata", false); // Form & Search History
+user_pref("privacy.clearOnShutdown.history", true); // Browsing & Download History
+user_pref("privacy.clearOnShutdown.offlineApps", false); // Offline Website Data
+user_pref("privacy.clearOnShutdown.sessions", false); // Active Logins
 
 /* downloads */
 user_pref("browser.download.dir", "/home/hermlon/tmp/downloads");
 user_pref("browser.download.folderList", 2);
 user_pref("browser.download.useDownloadDir", true);
 user_pref("browser.download.manager.addToRecentDocs", true); //.local/share/recently-used.xbel
-// mime type specific in handlers.json
 
 /* safebrowsing */
-/* enable phishing/malware check for websites (this is set by default)*/
-//user_pref("browser.safebrowsing.malware.enabled", true);
-//user_pref("browser.safebrowsing.phishing.enabled", true);
+/* enable phishing/malware check for websites */
+user_pref("browser.safebrowsing.malware.enabled", true);
+user_pref("browser.safebrowsing.phishing.enabled", true);
 /* disable checking downloaded files */
 user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
 user_pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
 
-/* allow clipboard api */
-user_pref("dom.allow_cut_copy", true);
-
-/* disable clear on shutdown */
-user_pref("privacy.sanitize.sanitizeOnShutdown", true);
-
-/* default clear recent history */
-user_pref("privacy.sanitize.timeSpan", 4); // today
-user_pref("privacy.clearOnShutdown.cache", false);
-user_pref("privacy.clearOnShutdown.cookies", false);
-user_pref("privacy.clearOnShutdown.downloads", true); // see note above
-user_pref("privacy.clearOnShutdown.formdata", false); // Form & Search History
-user_pref("privacy.clearOnShutdown.history", false); // Browsing & Download History
-user_pref("privacy.clearOnShutdown.offlineApps", false); // Offline Website Data
-user_pref("privacy.clearOnShutdown.sessions", false); // Active Logins
-
-/* enable search and form history */
-user_pref("browser.formfill.enable", true);
-
 /* disable letterbox margins */
 user_pref("privacy.resistFingerprinting.letterboxing", false);
 
-/* tmp: disable resistFingerprinting for BBB recording playback to load */
+/* disable resistFingerprinting */
 user_pref("privacy.resistFingerprinting", false);
-
-/* enable animations */
-user_pref("ui.prefersReducedMotion", 0);
 
 /* disable fullscreen warning */
 user_pref("full-screen-api.warning.delay", 0);
 user_pref("full-screen-api.warning.timeout", 0);
-
-// user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
 
 /* don't close with last tab */
 user_pref("browser.tabs.closeWindowWithLastTab", false);
@@ -1501,9 +1473,6 @@ user_pref("ui.key.menuAccessKey", 0);
 
 /* disable pocket */
 user_pref("extensions.pocket.enabled", false);
-
-/* disable http warning text */
-user_pref("security.insecure_connection_text.enabled", false);
 
 /* classic slower scroll speed */
 user_pref("general.smoothScroll.mouseWheel.durationMaxMS", 400);
@@ -1527,10 +1496,8 @@ user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-f
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
 user_pref("browser.urlbar.placeholderName.private", "DuckDuckGo");
 user_pref("browser.urlbar.showSearchSuggestionsFirst", false);
-// search results just in case this has to be tweaked later on
-//user_pref("browser.urlbar.resultBuckets", "{\"children\":[{\"maxResultCount\":1,\"children\":[{\"group\":\"heuristicTest\"},{\"group\":\"heuristicExtension\"},{\"group\":\"heuristicSearchTip\"},{\"group\":\"heuristicOmnibox\"},{\"group\":\"heuristicUnifiedComplete\"},{\"group\":\"heuristicAutofill\"},{\"group\":\"heuristicTokenAliasEngine\"},{\"group\":\"heuristicFallback\"}]},{\"group\":\"extension\",\"maxResultCount\":5},{\"flexChildren\":true,\"children\":[{\"group\":\"general\",\"flex\":2},{\"flexChildren\":true,\"children\":[{\"flex\":2,\"group\":\"formHistory\"},{\"flex\":4,\"group\":\"remoteSuggestion\"},{\"flex\":0,\"group\":\"tailSuggestion\"}],\"flex\":1}]}]}");
 
-/* disable whatever this does */
+/* disable cycling in recentlyUsedOrder */
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 
 /* newtabbpage activitystream */
@@ -1545,5 +1512,69 @@ user_pref("browser.newtabpage.activity-stream.topSitesRows", 0);
 user_pref("browser.newtabpage.pinned", "[]");
 user_pref("browser.newtabpage.blocked", "{\"26UbzFJ7qT9/4DhodHKA1Q==\":1,\"4gPpjkxgZzXPVtuEoAL9Ig==\":1,\"eV8/WsSLxHadrTL1gAxhug==\":1,\"gLv0ja2RYVgxKdp0I5qwvA==\":1,\"K00ILysCaEq8+bEqV/3nuw==\":1,\"T9nJot5PurhJSy8n038xGA==\":1}");
 
+//////////////////////////////////////////////////////////////////////////////////////////// Old
+
+user_pref("_user.js.parrot", "OVERRIDE syntax error: the parrot's dead!");
+
+/* enable WebRTC */
+//user_pref("media.peerconnection.enabled", true);
+//user_pref("media.peerconnection.ice.no_host", false);
+
+//user_pref("webgl.enable-webgl2", true);
+
+/* enable WebAssembly */
+//user_pref("javascript.options.wasm", true);
+
+/* enable screensharing */
+//user_pref("media.getusermedia.screensharing.enabled", true);
+//user_pref("media.getusermedia.browser.enabled", true);
+//user_pref("media.getusermedia.audiocapture.enabled", true);
+
+
+/* enable service workers */
+//user_pref("dom.serviceWorkers.enabled", true);
+
+/* enable push notifications */
+//user_pref("dom.push.enabled", true);
+
+/* enable audio stuff */
+//user_pref("media.navigator.enabled", true);
+//user_pref("dom.webaudio.enabled", true);
+
+
+// mime type specific in handlers.json
+
+
+/* allow clipboard api */
+//user_pref("dom.allow_cut_copy", true);
+
+/* disable clear on shutdown */
+//user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+
+/* default clear recent history */
+//user_pref("privacy.sanitize.timeSpan", 6); // 24 h
+//user_pref("privacy.clearOnShutdown.cache", false);
+//user_pref("privacy.clearOnShutdown.cookies", false);
+//user_pref("privacy.clearOnShutdown.downloads", true); // see note above
+//user_pref("privacy.clearOnShutdown.formdata", false); // Form & Search History
+//user_pref("privacy.clearOnShutdown.history", false); // Browsing & Download History
+//user_pref("privacy.clearOnShutdown.offlineApps", false); // Offline Website Data
+//user_pref("privacy.clearOnShutdown.sessions", false); // Active Logins
+
+
+
+/* enable animations */
+//user_pref("ui.prefersReducedMotion", 0);
+
+
+// user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
+
+
+/* disable http warning text */
+//user_pref("security.insecure_connection_text.enabled", false);
+
+
+// search results just in case this has to be tweaked later on
+//user_pref("browser.urlbar.resultBuckets", "{\"children\":[{\"maxResultCount\":1,\"children\":[{\"group\":\"heuristicTest\"},{\"group\":\"heuristicExtension\"},{\"group\":\"heuristicSearchTip\"},{\"group\":\"heuristicOmnibox\"},{\"group\":\"heuristicUnifiedComplete\"},{\"group\":\"heuristicAutofill\"},{\"group\":\"heuristicTokenAliasEngine\"},{\"group\":\"heuristicFallback\"}]},{\"group\":\"extension\",\"maxResultCount\":5},{\"flexChildren\":true,\"children\":[{\"group\":\"general\",\"flex\":2},{\"flexChildren\":true,\"children\":[{\"flex\":2,\"group\":\"formHistory\"},{\"flex\":4,\"group\":\"remoteSuggestion\"},{\"flex\":0,\"group\":\"tailSuggestion\"}],\"flex\":1}]}]}");
 
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");

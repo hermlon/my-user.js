@@ -15,7 +15,6 @@ sfp=$(readlink -f "${BASH_SOURCE[0]}" 2>/dev/null || greadlink -f "${BASH_SOURCE
 if [ -z "$sfp" ]; then sfp=${BASH_SOURCE[0]}; fi
 
 ## change directory to the Firefox profile directory
-cd "$(dirname "${sfp}")"
 
 fQuit() {
 	## change directory back to the original working directory
