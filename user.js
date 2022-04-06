@@ -1430,12 +1430,12 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 
 /* default clear recent history */
 user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.downloads", true);
+user_pref("privacy.clearOnShutdown.formdata", false);
+user_pref("privacy.clearOnShutdown.history", false);
+user_pref("privacy.clearOnShutdown.sessions", false);
+user_pref("privacy.clearOnShutdown.offlineApps", false);
 user_pref("privacy.clearOnShutdown.cookies", false);
-user_pref("privacy.clearOnShutdown.downloads", true); // see note above
-user_pref("privacy.clearOnShutdown.formdata", false); // Form & Search History
-user_pref("privacy.clearOnShutdown.history", true); // Browsing & Download History
-user_pref("privacy.clearOnShutdown.offlineApps", false); // Offline Website Data
-user_pref("privacy.clearOnShutdown.sessions", false); // Active Logins
 
 /* downloads */
 user_pref("browser.download.dir", "/home/hermlon/tmp/downloads");
