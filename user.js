@@ -1443,6 +1443,9 @@ user_pref("browser.download.folderList", 2);
 user_pref("browser.download.useDownloadDir", true);
 user_pref("browser.download.manager.addToRecentDocs", true); //.local/share/recently-used.xbel
 
+/* uploads */
+user_pref("dom.input.fallbackUploadDir", "/home/hermlon");
+
 /* safebrowsing */
 /* enable phishing/malware check for websites */
 user_pref("browser.safebrowsing.malware.enabled", true);
@@ -1490,7 +1493,8 @@ user_pref("browser.tabs.drawInTitlebar", false);
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 
 /* toolbar customization */
-user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"customizableui-special-spring13\",\"urlbar-container\",\"personal-bookmarks\",\"customizableui-special-spring2\",\"downloads-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[]},\"seen\":[\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\"],\"currentVersion\":16,\"newElementCount\":15}");
+user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"customizableui-special-spring13\",\"urlbar-container\",\"personal-bookmarks\",\"customizableui-special-spring2\",\"downloads-button\",\"ublock0_raymondhill_net-browser-action\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[]},\"seen\":[\"developer-button\",\"ublock0_raymondhill_net-browser-action\"],\"dirtyAreaCache\":[\"nav-bar\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\"],\"currentVersion\":18,\"newElementCount\":16}");
+
 
 /* urlbar */
 user_pref("browser.urlbar.placeholderName", "DuckDuckGo");
