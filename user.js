@@ -1516,6 +1516,8 @@ user_pref("browser.newtabpage.activity-stream.topSitesRows", 0);
 user_pref("browser.newtabpage.pinned", "[]");
 user_pref("browser.newtabpage.blocked", "{\"26UbzFJ7qT9/4DhodHKA1Q==\":1,\"4gPpjkxgZzXPVtuEoAL9Ig==\":1,\"eV8/WsSLxHadrTL1gAxhug==\":1,\"gLv0ja2RYVgxKdp0I5qwvA==\":1,\"K00ILysCaEq8+bEqV/3nuw==\":1,\"T9nJot5PurhJSy8n038xGA==\":1}");
 
+user_pref("browser.privatebrowsing.enable-new-indicator", false);
+
 //////////////////////////////////////////////////////////////////////////////////////////// Old
 
 user_pref("_user.js.parrot", "OVERRIDE syntax error: the parrot's dead!");
